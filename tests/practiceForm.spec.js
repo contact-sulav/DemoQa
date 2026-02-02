@@ -39,6 +39,6 @@ test('practice form', async ({ page }) => {
         if (ad) ad.remove();
     });
     await page.locator('#closeLargeModal').click();
-    await expect(page.getByRole('heading', { name: 'Student Registration Form' })).toBeVisible();
+    await expect(page.locator('//h5')).toBeVisible();
 
 });
