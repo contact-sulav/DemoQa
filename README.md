@@ -32,6 +32,7 @@ The automated test performs the following steps:
 ---
 
 ## 📂 Project Structure
+```text
 demoQA/
 ├── tests/
 │ └── practiceForm.spec.js
