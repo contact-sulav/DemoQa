@@ -34,7 +34,11 @@ test('practice form', async ({ page }) => {
 
     await page.locator('#submit').click();
     await page.locator('.modal-dialog').waitFor();
-    await page.getByRole('button', { name: 'Close' }).click();
+    await page.evaluate(() => {
+        const ad = document.querySelector('#fixedban');
+        if (ad) ad.remove();
+    });
+    await page.locator('#closeLargeModal').click();
     await expect(page.getByRole('heading', { name: 'Student Registration Form' })).toBeVisible();
 
 });
